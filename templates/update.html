@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+{% include 'includes/_flashmsg.html' %}
+<div class="container">
+<br>
+<div class="small-middle-container">
+<div class="jumbotron">
+    <h2 style="text-align: center; color: #206aaa;">Password Reset</h2>
+    {% from "includes/_formhelpers.html" import render_field %}
+    <form method="POST" action="">
+    	<div class="form-group">
+            <label><strong>Key</strong></label>
+            <input type="text" name="keyy" class="form-control" value={{request.form.keyy}}>
+        </div>
+        <div class="form-group">
+            <label><strong>New Password</strong></label>
+            <input type="password" name="password" class="form-control" value={{request.form.password}}>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Reset">
+    </form>
+</div>
+</div>
+
+
+
+
+
+</div>
+{% endblock %}

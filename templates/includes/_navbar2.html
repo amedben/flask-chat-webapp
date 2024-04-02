@@ -1,0 +1,48 @@
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction1(){
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+<div class="w3-top">
+<div class="w3-bar w3-my w3-card w3-right-align w3-large">
+ <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large" href="javascript:void(0);" onclick="myFunction1()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/" class="w3-bar-item w3-button w3-padding-large w3-white"><i class="fas fa-home"></i></a></a>
+    {% if session.logged_in %}
+    <a href="/chatting/{{ session.uid }}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Chat <i class="far fa-comment-dots"></i></a>
+    <a href="/out" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"> Logout <i class="fas fa-sign-out-alt"></i></a>
+    {% else %}
+    <a href="/register" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"> SignUp <i class="fas fa-user-plus"></i></a>
+    <a href="/login" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">  Login <i class="fas fa-sign-in-alt"></i></a>
+    {% endif %}
+  </div>
+
+  <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    {% if session.logged_in %}
+    <a href="/chatting/{{ session.uid }}" class="w3-bar-item w3-button w3-padding-large">Chat <i class="far fa-comment-dots"></a>
+    <a href="/out" class="w3-bar-item w3-button w3-padding-large"> Logout <i class="fas fa-sign-out-alt"></a>
+    {% else %}
+    <a href="/register" class="w3-bar-item w3-button w3-padding-large"> SignUp <i class="fas fa-user-plus"></i></a>
+    <a href="/login" class="w3-bar-item w3-button w3-padding-large"> Login <i class="fas fa-sign-in-alt"></i></a>
+    {% endif %}
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

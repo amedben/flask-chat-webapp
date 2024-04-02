@@ -1,0 +1,21 @@
+<style type="text/css">
+
+</style>
+
+<nav class="navbar navbar-expand-sm sticky-top w3-card">
+  <a class="navbar-brand" id="cllp" href="/"> <i class="fas fa-home"></i></a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" id="cllp">
+     <i class="fa fa-bars"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="nav navbar-nav ml-auto">
+      {% if session.logged_in %}
+        <li class="nav-item"><a class="nav-link" href="/chatting/{{ session.uid }}" id="cllp">Chat <i class="far fa-comment-dots"></i></a></li>
+        <li class="nav-item"><a class="nav-link" href="/out" id="cllp"> Logout <i class="fas fa-sign-out-alt"></i></a></li>
+      {% else %}
+        <li class="nav-item"><a class="nav-link" href="/register" id="cllp"> SignUp <i class="fas fa-user-plus"></i></a></li>
+        <li class="nav-item"><a class="nav-link" href="/login" id="cllp">  Login <i class="fas fa-sign-in-alt"></i></a></li>
+      {% endif %}
+    </ul>
+  </div>  
+</nav>
